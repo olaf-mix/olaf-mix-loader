@@ -1,6 +1,5 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-// const OlafMixPlugin = require('../index');
 
 module.exports = {
     mode: 'production',

@@ -1,6 +1,5 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-// const OlafMixPlugin = require('../index');
 
 module.exports = {
     mode: 'production',
@@ -29,20 +28,21 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: [
+                use: [
                     {
                         loader: 'ts-loader',
                         options: {
+                            configFile: path.resolve(__dirname, 'tsconfig.json')
                         }
-                    }
+                    },
+                    {
+                        loader: path.resolve(__dirname, '..', 'src'),
+                        options: {
+                            parser: 'ts'
+                        }
+                    },
                 ]
-            }
-            // {
-            //     loader: path.resolve(__dirname, '../OlafMixPluginindex.js'),
-            //     options: {
-            //         parser: 'ts'
-            //     }
-            // }
+            },
         ]
     },
     optimization: {
@@ -60,6 +60,5 @@ module.exports = {
         ],
     },
     plugins: [
-        // new OlafMixPlugin()
     ]
 };

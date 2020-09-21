@@ -5,7 +5,6 @@ const {mixCode} = require('@olaf-mix/olaf-mix');
 const {getOptions} = require('loader-utils');
 
 function OlafMixLoader(source) {
-    console.log(source.substring(0, 50))
     const options = getOptions(this) || {};
     const parser = options.parser || /^.*\.tsx?$/.test(this.resourcePath) ? 'ts' : 'js';
     return mixCode(source, {refreshHelpCode: true, parser}).source;
