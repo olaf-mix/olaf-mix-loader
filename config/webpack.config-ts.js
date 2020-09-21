@@ -1,5 +1,4 @@
 const path = require('path');
-const OlafMixLoader = require('../src');
 
 module.exports = {
     mode: 'production',
@@ -18,18 +17,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: [
-                    'babel-loader',
-                    {
-                        loader: OlafMixLoader,
-                        options: {
-                        }
-                    },
-                ],
-            },
-            {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
                 use: [
@@ -40,7 +27,7 @@ module.exports = {
                         }
                     },
                     {
-                        loader: OlafMixLoader,
+                        loader: path.resolve(__dirname, '..', 'src'),
                         options: {
                             parser: 'ts'
                         }

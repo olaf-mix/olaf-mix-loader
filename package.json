@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --watch --config ./config/webpack.config.js"
+    "dev:js": "webpack --watch --config ./config/webpack.config-js.js",
+    "dev:ts": "webpack --watch --config ./config/webpack.config-ts.js",
+    "dev:all": "webpack --watch --config ./config/webpack.config-all.js",
+    "test": "echo \" 暂时无测试 \" && exit 1"
   },
   "author": "",
   "license": "ISC",
