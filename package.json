@@ -2,7 +2,7 @@
   "name": "@olaf-mix/olaf-mix-loader",
   "version": "0.0.6-beta1",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "dev:js": "webpack --watch --config ./config/webpack.config-js.js",
     "dev:ts": "webpack --watch --config ./config/webpack.config-ts.js",
